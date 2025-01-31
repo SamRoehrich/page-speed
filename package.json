@@ -1,0 +1,15 @@
+{
+  "name": "page-speed",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "chrome-launcher": "^1.1.2",
+    "lighthouse": "^12.3.0"
+  }
+}
