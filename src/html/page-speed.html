@@ -9,9 +9,10 @@
     </head>
     <body>
         <h1>Test your page speed</h1>
-        <form hx-post="/test">
+        <form hx-post="/test" hx-target="#result" hx-swap="outerHTML">
             <input name="site" type="text" id="site" />
             <button type="submit">Test Page Speed</button>
         </form>
+        <div id="result" />
     </body>
 </html>
