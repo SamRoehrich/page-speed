@@ -1,5 +1,4 @@
 {
-
   "name": "page-speed",
   "module": "index.ts",
   "devDependencies": {
@@ -13,6 +12,8 @@
   "dependencies": {
     "chrome-launcher": "^1.1.2",
     "lighthouse": "^12.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "sst": "3.7.0"
   },
   "scripts": {
