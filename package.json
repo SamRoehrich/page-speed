@@ -3,7 +3,8 @@
   "module": "index.ts",
   "devDependencies": {
     "@types/aws-lambda": "8.10.147",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "wrangler": "^3.111.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -17,6 +18,7 @@
     "sst": "3.7.0"
   },
   "scripts": {
-    "dev": "bun run --watch index.ts"
+    "dev": "bun run --watch index.ts",
+    "sso": "aws sso login --sso-session=spinach"
   }
 }
