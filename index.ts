@@ -4,7 +4,7 @@ import blogPage from "./src/html/blog.html";
 import toolsPage from "./src/html/tools.html";
 
 const server = Bun.serve({
-  port: 80,
+  port: 8080,
   routes: {
     "/health": new Response("Healthy"),
     "/": homepage,
