@@ -3,7 +3,7 @@
   "module": "index.ts",
   "devDependencies": {
     "@types/aws-lambda": "8.10.147",
-    "@types/bun": "latest",
+    "@types/bun": "1.2.4",
     "wrangler": "^3.111.0"
   },
   "peerDependencies": {
