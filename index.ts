@@ -1,7 +1,7 @@
-import homepage from "@@/html/homepage.html";
-import pageSpeed from "@@/html/page-speed.html";
-import blogPage from "@@/html/blog.html";
-import toolsPage from "@@/html/tools.html";
+import homepage from "./src/html/homepage.html";
+import pageSpeed from "./src/html/page-speed.html";
+import blogPage from "./src/html/blog.html";
+import toolsPage from "./src/html/tools.html";
 
 const server = Bun.serve({
   port: 80,
@@ -13,7 +13,7 @@ const server = Bun.serve({
     "/tools": toolsPage,
   },
   async fetch(req, server) {
-    return new Response("hi from bun");
+    return new Response("hi ");
   },
 });
 
