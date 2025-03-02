@@ -6,6 +6,9 @@ import toolsPage from "./src/html/tools.html";
 const server = Bun.serve({
   port: 8080,
   routes: {
+    "/checky": new Response("checky"),
+  },
+  static: {
     "/health": new Response("Healthy"),
     "/": homepage,
     "/blog": blogPage,

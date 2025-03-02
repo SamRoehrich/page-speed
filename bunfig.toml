@@ -1,1 +1,3 @@
 jsx = "react"
+[serve.static]
+plugins = ["bun-plugin-tailwind"]
