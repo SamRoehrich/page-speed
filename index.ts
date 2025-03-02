@@ -7,16 +7,15 @@ const server = Bun.serve({
   port: 8080,
   routes: {
     "/checky": new Response("checky"),
-  },
-  static: {
     "/health": new Response("Healthy"),
     "/": homepage,
     "/blog": blogPage,
     "/page-speed": pageSpeed,
     "/tools": toolsPage,
   },
+  development: process.env.NODE_ENV === "production",
   async fetch(req, server) {
-    return new Response("hi ");
+    return new Response("404 Not Found", { status: 404 });
   },
 });
 
