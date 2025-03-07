@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+:root {
+    color-scheme: light dark;
+}
+
+@theme {
+    --color-primary: light-dark(
+        oklch(0.967 0.003 264.542),
+        oklch(0.21 0.034 264.665)
+    );
+}
