@@ -1,5 +1,4 @@
-import.meta.hot.accept();
-import React, { Suspense } from "react";
+import React from "react";
 import { Home } from "./home";
 import { Template } from "./template";
 

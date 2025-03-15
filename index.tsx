@@ -1,16 +1,10 @@
-import homepage from "./src/html/homepage.html";
-import pageSpeed from "./src/html/page-speed.html";
-import blogPage from "./src/html/blog.html";
-import toolsPage from "./src/html/tools.html";
-import changeLogPage from "./src/html/change-log.html";
-
 import { renderToReadableStream } from "react-dom/server";
 import { BlogHome } from "@@/react/blog";
 import React from "react";
 
 const server = Bun.serve({
   port: 8080,
-  async fetch(req, server) {
+  async fetch(req) {
     const pathname = new URL(req.url).pathname;
     if (pathname === "/slash") {
       return new Response("Redirecting to www.slashpages.net", {
