@@ -29,7 +29,8 @@ export function Home() {
       </section>
 
       <section className="bg-gray-800 shadow rounded-lg p-12">
-        <a href="/next-and-graphql">
+        <h1 className="font-bold">Under Construction</h1>
+        <a href="/next-and-graphql" className="hidden">
           <h1>Next.js 15 and Graphql</h1>
 
           <p>
