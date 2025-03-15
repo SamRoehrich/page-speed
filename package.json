@@ -2,25 +2,23 @@
   "name": "page-speed",
   "module": "index.ts",
   "devDependencies": {
-    "@types/aws-lambda": "8.10.147",
-    "@types/bun": "1.2.4",
-    "wrangler": "^3.111.0"
+    "@types/bun": "1.2.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "type": "module",
   "dependencies": {
+    "@types/react-dom": "^19.0.4",
     "bun-plugin-tailwind": "^0.0.15",
     "chrome-launcher": "^1.1.2",
     "lighthouse": "^12.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "sst": "3.7.0"
+    "react-dom": "^19.0.0"
   },
   "scripts": {
     "start": "bun run ./out/index.js",
     "build": "bun build index.ts --outdir ./out --target bun --format esm --sourcemap",
-    "dev": "bun run --watch index.ts"
+    "dev": "bun run --watch index.tsx"
   }
 }
