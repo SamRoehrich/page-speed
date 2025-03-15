@@ -17,8 +17,8 @@
     "react-dom": "^19.0.0"
   },
   "scripts": {
-    "start": "bun run ./out/index.js",
-    "build": "bun build index.ts --outdir ./out --target bun --format esm --sourcemap",
+    "prestart": "bun build index.tsx --outdir ./dist --target bun esm --sourcemap",
+    "start": "bun run ./dist/index.js",
     "dev": "bun run --watch index.tsx"
   }
 }
