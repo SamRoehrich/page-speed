@@ -2,7 +2,7 @@ import React from "react";
 export function Blog() {
   return (
     <div className="space-y-8 ">
-      <section className="bg-gray-800 shadow rounded-lg p-12">
+      <section className="shadow rounded-lg p-12">
         <h1 className="font-bold">Under Construction</h1>
         <a href="/next-and-graphql" className="hidden">
           <h1>Next.js 15 and Graphql</h1>

@@ -15,6 +15,7 @@ const server = Bun.serve({
 
     // Record analytics asynchronously (don't wait for it)
     recordPageView(pathname, userAgent || undefined, ip, referrer || undefined);
+
     if (pathname === "/slash") {
       return new Response("Redirecting to www.slashpages.net", {
         status: 307,
@@ -28,7 +29,7 @@ const server = Bun.serve({
         <head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <script src="https://cdn.tailwindcss.com"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
           <title>{pathname}</title>
         </head>
         <ServerRouter location={pathname} />

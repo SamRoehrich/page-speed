@@ -86,7 +86,11 @@ export function getPageViewsForPath(path: string) {
       WHERE path = ?
     `,
       )
-      .get(path);
+      .get(path) as {
+      path: string;
+      view_count: number;
+      last_viewed: string;
+    };
 
     return stats || { path, view_count: 0, last_viewed: null };
   } finally {
