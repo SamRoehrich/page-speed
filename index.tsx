@@ -1,11 +1,20 @@
 import { renderToReadableStream } from "react-dom/server";
-import { BlogHome } from "@@/react/blog";
+import { ServerRouter } from "@@/react/server-router";
 import React from "react";
+import { initAnalyticsDb, recordPageView } from "@@/sql-lite/analytics";
 
+initAnalyticsDb();
 const server = Bun.serve({
   port: 8080,
   async fetch(req) {
     const pathname = new URL(req.url).pathname;
+    // Track page view
+    const userAgent = req.headers.get("user-agent");
+    const ip = req.headers.get("x-forwarded-for") || "unknown";
+    const referrer = req.headers.get("referer");
+
+    // Record analytics asynchronously (don't wait for it)
+    recordPageView(pathname, userAgent || undefined, ip, referrer || undefined);
     if (pathname === "/slash") {
       return new Response("Redirecting to www.slashpages.net", {
         status: 307,
@@ -22,9 +31,10 @@ const server = Bun.serve({
           <script src="https://cdn.tailwindcss.com"></script>
           <title>{pathname}</title>
         </head>
-        <BlogHome />,
+        <ServerRouter location={pathname} />
       </html>,
     );
+
     return new Response(stream, {
       headers: {
         "Content-Type": "text/html",
