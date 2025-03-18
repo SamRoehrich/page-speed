@@ -3,7 +3,6 @@ import { ServerRouter } from "@@/react/server-router";
 import { initAnalyticsDb, recordPageView } from "@@/sql-lite/analytics";
 import { getTitleByPathname } from "@@/utils/get-title-by-pathname";
 import { getPost, initPostsDb, insertPost } from "@@/sql-lite/blog";
-import { entry } from "@@/react/entry";
 
 initAnalyticsDb();
 initPostsDb();
@@ -33,10 +32,17 @@ const server = Bun.serve({
           return new Response(JSON.stringify(post), { status: 200 });
         }
         case "/api/post/insert":
-          const formData = await req.formData();
-          const post = insertPost(formData);
+          if (process.env.NODE_ENV !== "production") {
+            const formData = await req.formData();
+            const post = insertPost(formData);
 
-          return new Response(JSON.stringify(post), { status: 200 });
+            return new Response(JSON.stringify(post), { status: 200 });
+          } else {
+            return new Response("Can't add a post in Production. Nice try.", {
+              status: 500,
+            });
+          }
+
         default:
           return new Response("Api route not found", { status: 404 });
       }

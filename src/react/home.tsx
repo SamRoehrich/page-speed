@@ -35,7 +35,7 @@ export function Home() {
         <BlogCard
           title="Keep Learning"
           description="How to beat AI"
-          href="/blog/ai-brainrot"
+          href="/blog/keep-learning"
         />
         <BlogCard
           title="Little Lies"
