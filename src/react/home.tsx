@@ -1,4 +1,3 @@
-import React from "react";
 import { BlogCard } from "./components/blog-card";
 export function Home() {
   return (
@@ -23,23 +22,23 @@ export function Home() {
       <div className="py-8">
         <h2 className="font-bold text-2xl">
           <a href="/blog" className="hover:underline hover:text-slate-800">
-            Ideas{" "}
+            Ideas
           </a>
         </h2>
       </div>
       <section className="flex flex-col space-y-4 md:space-y-0 md:grid md:grid-cols-6 md:gap-4">
         <BlogCard
-          title="GraphQL and Next.js"
+          title="Supergraph"
           description="How we make it work at Outside"
           href="/blog/graphql-next"
         />
         <BlogCard
-          title="(dont) Use AI"
-          description="How I avoid the AI brainrot"
+          title="Keep Learning"
+          description="How to beat AI"
           href="/blog/ai-brainrot"
         />
         <BlogCard
-          title="React and Bun"
+          title="Little Lies"
           description="How I built this site"
           href="/blog/react-and-bun"
         />

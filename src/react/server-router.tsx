@@ -1,4 +1,3 @@
-import React from "react";
 import { Blog } from "./blog";
 import { Template } from "./template";
 import { Home } from "./home";
@@ -14,7 +13,7 @@ export async function ServerRouter({ location }: { location: string }) {
   if (location.includes("/blog")) {
     return (
       <Template>
-        <Blog />
+        <Blog title={location} />
       </Template>
     );
   }

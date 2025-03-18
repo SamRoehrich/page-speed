@@ -177,4 +177,4 @@ dist
 # sst
 .sst
 
-.sqlite
+analytics.sqlite

@@ -27,13 +27,11 @@ export function initAnalyticsDb() {
   db.close();
 }
 
-export function recordPageView(
-  path: string,
-  userAgent?: string,
-  ipAddress?: string,
-  referrer?: string,
-  uniqueId?: string,
-) {
+export function recordPageView(req: Request, uniqueId?: string) {
+  const path = new URL(req.url).pathname;
+  const userAgent = req.headers.get("user-agent");
+  const ipAddress = req.headers.get("x-forwarded-for") || "unknown";
+  const referrer = req.headers.get("referer");
   const db = new Database("analytics.sqlite");
 
   try {
