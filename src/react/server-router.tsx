@@ -11,9 +11,10 @@ export async function ServerRouter({ location }: { location: string }) {
     );
   }
   if (location.includes("/blog")) {
+    const post = location.split("/blog/")[1];
     return (
       <Template>
-        <Blog title={location} />
+        <Blog title={post} />
       </Template>
     );
   }

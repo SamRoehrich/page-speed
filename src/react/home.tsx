@@ -28,13 +28,13 @@ export function Home() {
       </div>
       <section className="flex flex-col space-y-4 md:space-y-0 md:grid md:grid-cols-6 md:gap-4">
         <BlogCard
-          title="Supergraph"
+          title="Tutorial: Graphql + Next.js"
           description="How we make it work at Outside"
           href="/blog/graphql-next"
         />
         <BlogCard
           title="Keep Learning"
-          description="How to beat AI"
+          description="How I plan to beat AI"
           href="/blog/keep-learning"
         />
         <BlogCard

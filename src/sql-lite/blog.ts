@@ -67,11 +67,11 @@ export function insertPost(form: FormData) {
 }
 
 export function getPost(
-  title: string,
+  url: string,
 ): Pick<Post, "content" | "description" | "title"> | false {
   const db = new Database(dbName);
 
-  if (!title) return false;
+  if (!url) return false;
 
   try {
     const post = db
@@ -79,17 +79,16 @@ export function getPost(
         `
       SELECT title, description, content
       FROM posts
-      WHERE title = ?
+      WHERE url = ?
     `,
       )
-      .get(title) as {
+      .get(url) as {
       title: string;
       description: string;
       content: string;
     };
 
     if (isPost(post)) {
-      console.log(true);
       return post;
     }
     return false;
