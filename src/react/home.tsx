@@ -34,7 +34,7 @@ export function Home() {
         />
         <BlogCard
           title="Keep Learning"
-          description="How I plan to beat AI"
+          description="How good people build good products"
           href="/blog/keep-learning"
         />
         <BlogCard

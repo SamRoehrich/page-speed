@@ -4,9 +4,9 @@ export function Blog({ title }: { title: string }) {
   const post = getPost(title);
   if (post) {
     return (
-      <div className="space-y-8 ">
+      <div className="space-y-8">
         <h1>{post.title}</h1>
-        <span>{post.description}</span>
+        <span className="mb-6">{post.description}</span>
         <section>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </section>
