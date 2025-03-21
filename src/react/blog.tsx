@@ -2,6 +2,7 @@ import { getPost } from "@@/sql-lite/blog";
 
 export function Blog({ title }: { title: string }) {
   const post = getPost(title);
+  if (title.includes("keep-learning")) return null;
   if (post) {
     return (
       <div className="space-y-8">
