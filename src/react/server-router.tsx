@@ -1,6 +1,7 @@
 import { Blog } from "./blog";
 import { Template } from "./template";
 import { Home } from "./home";
+import Signup from "../app/sign-up";
 
 export async function ServerRouter({ location }: { location: string }) {
   if (location === "/") {
@@ -15,6 +16,13 @@ export async function ServerRouter({ location }: { location: string }) {
     return (
       <Template>
         <Blog title={post} />
+      </Template>
+    );
+  }
+  if (location.includes("/sign-up")) {
+    return (
+      <Template>
+        <Signup />
       </Template>
     );
   }
